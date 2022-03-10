@@ -56,7 +56,7 @@ def get_results(text, model=2):
 
 def generate_seq2seq(text):
 
-    model_name = 'bert_tokenizer_20k_add'
+    model_name = 'new_bert_tokenizer_20k_add'
     tokenizers = tf.saved_model.load(model_name)
 
     vocab_inp_size = tokenizers.text.get_vocab_size().numpy()
