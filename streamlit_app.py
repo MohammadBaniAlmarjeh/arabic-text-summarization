@@ -50,7 +50,7 @@ run_query = st.button("أجب")
 if run_query:
     # https://discuss.streamlit.io/t/showing-a-gif-while-st-spinner-runs/5084
     with st.spinner("جاري التلخيص ..."):
-        result = get_results(text)
+        result = get_results(text, model=2)
 
     if len(result) > 0:
         st.write("## :الأجابات هي")
