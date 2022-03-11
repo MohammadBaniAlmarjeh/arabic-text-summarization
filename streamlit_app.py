@@ -40,6 +40,12 @@ st.sidebar.write(
     "Source Code [GitHub](https://github.com/)"
 )
 st.sidebar.write("\n")
+option = st.sidebar.selectbox(
+     'Select Model',
+     ('BERT2BERT', 'GPT2', 'Transformer', 'Seq2Seq_LSTM'))
+
+st.sidebar.write('You selected:', option)
+st.sidebar.write("\n")
 n_answers = st.sidebar.slider(
     "Max. number of answers", min_value=1, max_value=10, value=2, step=1
 )

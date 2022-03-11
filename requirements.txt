@@ -7,6 +7,3 @@ python-bidi==0.4.2
 PyArabic
 torch
 codetiming==1.3.0
-tensorflow
-tensorflow-text
-tensorflow-addons==0.13.0
