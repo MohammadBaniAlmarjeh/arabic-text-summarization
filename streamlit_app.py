@@ -80,7 +80,7 @@ st.sidebar.write("\n")
 
 model_selected = st.sidebar.selectbox(
      'Select a Model',
-     ('T5','BERT2BERT', 'GPT-2', 'mBERT2mBERT','Transformer'))
+     ('T5','BERT2BERT (Inactive)', 'GPT-2 (Inactive)', 'mBERT2mBERT (Inactive)','Transformer (Inactive)'))
 st.sidebar.write("\n")
 num_beams = st.sidebar.slider(
     "Number of beams", min_value=1, max_value=10, value=3, step=1
@@ -97,13 +97,16 @@ text = st.text_area("أدخل نص ليتم تلخيصه", value="شهدت مد�
 
 run_query = st.button("لخّص")
 if run_query: #and model_selected != 'Seq2Seq_LSTM':
-    # https://discuss.streamlit.io/t/showing-a-gif-while-st-spinner-runs/5084
-    with st.spinner("جاري التلخيص ..."):
-        result = get_results(text, model_selected, num_beams, length_penalty)
-    if len(result) > 0:
-        #st.write("الملخص:")
-        st.write(result)
+    if model_selected == 'T5':
+        # https://discuss.streamlit.io/t/showing-a-gif-while-st-spinner-runs/5084
+        with st.spinner("جاري التلخيص ..."):
+            result = get_results(text, model_selected, num_beams, length_penalty)
+        if len(result) > 0:
+            #st.write("الملخص:")
+            st.write(result)
+        else:
+            st.write("")
     else:
-        st.write("")
+        st.write("عذراً, هذا النموذج غير متاح حالياً")
 #elif run_query and model_selected == 'Seq2Seq_LSTM':
 #    st.write("عذراً, هذا النموذج غير متاح حالياً")
