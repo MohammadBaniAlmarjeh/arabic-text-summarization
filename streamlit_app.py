@@ -80,7 +80,7 @@ st.sidebar.write("\n")
 
 model_selected = st.sidebar.selectbox(
      'Select a Model',
-     ('T5','BERT2BERT (Inactive)', 'GPT-2 (Inactive)', 'mBERT2mBERT (Inactive)','Transformer (Inactive)'))
+     ('T5','BERT2BERT', 'GPT-2', 'mBERT2mBERT','Transformer'))
 st.sidebar.write("\n")
 num_beams = st.sidebar.slider(
     "Number of beams", min_value=1, max_value=10, value=3, step=1
