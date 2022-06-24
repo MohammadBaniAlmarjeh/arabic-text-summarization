@@ -97,16 +97,13 @@ text = st.text_area("أدخل نص ليتم تلخيصه", value="شهدت مد�
 
 run_query = st.button("لخّص")
 if run_query: #and model_selected != 'Seq2Seq_LSTM':
-    if model_selected == 'T5':
-        # https://discuss.streamlit.io/t/showing-a-gif-while-st-spinner-runs/5084
-        with st.spinner("جاري التلخيص ..."):
-            result = get_results(text, model_selected, num_beams, length_penalty)
-        if len(result) > 0:
-            #st.write("الملخص:")
-            st.write(result)
-        else:
-            st.write("")
+    # https://discuss.streamlit.io/t/showing-a-gif-while-st-spinner-runs/5084
+    with st.spinner("جاري التلخيص ..."):
+        result = get_results(text, model_selected, num_beams, length_penalty)
+    if len(result) > 0:
+        #st.write("الملخص:")
+        st.write(result)
     else:
-        st.write("عذراً, هذا النموذج غير متاح حالياً")
+        st.write("")
 #elif run_query and model_selected == 'Seq2Seq_LSTM':
 #    st.write("عذراً, هذا النموذج غير متاح حالياً")
