@@ -29,7 +29,7 @@ def load_casualLM_model(model_path):
     logger.info("AutoModelForCausalLM is loading")
     return AutoModelForCausalLM.from_pretrained(model_path)
 
-@st.cache(ttl=24*3600, hash_funcs={tokenizers.Tokenizer: lambda _: None})
+@st.cache(ttl=24*3600, hash_funcs={tokenizers.Tokenizer: lambda _: None, _thread.RLock: lambda _: None})
 def load_autotokenizer_model(tokenizer_path):
     logger.info("AutoTokenizer is loading")
     return AutoTokenizer.from_pretrained(tokenizer_path)
