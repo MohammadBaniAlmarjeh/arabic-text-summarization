@@ -21,30 +21,24 @@ reader_time.start()
 #####
 
 @st.cache(ttl=24*3600, hash_funcs={AutoModelForSeq2SeqLM: lambda _: None})
-def load_seq2seqLM_model(model_path):
-    logger.info("AutoModelForSeq2SeqLM is loading")
+def load_seq2seqLM_model(model_path): #This function is not used
     return AutoModelForSeq2SeqLM.from_pretrained(model_path)
 @st.cache(ttl=24*3600, hash_funcs={AutoModelForCausalLM: lambda _: None})
 def load_casualLM_model(model_path):
-    logger.info("AutoModelForCausalLM is loading")
     return AutoModelForCausalLM.from_pretrained(model_path)
 
 @st.cache(ttl=24*3600, hash_funcs={tokenizers.Tokenizer: lambda _: None})
 def load_autotokenizer_model(tokenizer_path):
-    logger.info("AutoTokenizer is loading")
     return AutoTokenizer.from_pretrained(tokenizer_path)
 @st.cache(ttl=24*3600, hash_funcs={BertTokenizer: lambda _: None})
 def load_berttokenizer_model(tokenizer_path):
-    logger.info("BertTokenizer is loading")
     return BertTokenizer.from_pretrained(tokenizer_path)
 @st.cache(ttl=24*3600, hash_funcs={GPT2TokenizerFast: lambda _: None})
 def load_gpt2tokenizer_model(tokenizer_path):
-    logger.info("GPT2TokenizerFast is loading")
     return GPT2TokenizerFast.from_pretrained(tokenizer_path)
 
 @st.cache(ttl=24*3600, allow_output_mutation=True, hash_funcs={pipeline: lambda _: None, tokenizers.Tokenizer: lambda _: None})
 def load_generation_pipeline(model_path):
-    logger.info("Pipeline is loading")
     if model_path == "malmarjeh/mbert2mbert-arabic-text-summarization":
         tokenizer = load_berttokenizer_model(model_path)
     else:
