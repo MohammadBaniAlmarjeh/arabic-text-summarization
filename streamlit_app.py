@@ -67,8 +67,8 @@ h1 {
     unsafe_allow_html=True,
 )
 
-st.sidebar.image("svu.png", width=150)
-st.sidebar.write("\n")
+#st.sidebar.image("svu.png", width=150)
+#st.sidebar.write("\n")
 st.sidebar.write("Arabic Text Summarization")
 st.sidebar.write("Made by Mohammad Bani Almarjeh ([Linkedin](https://www.linkedin.com/in/mohammad-bani-almarjeh))")
 st.sidebar.write("\n")
