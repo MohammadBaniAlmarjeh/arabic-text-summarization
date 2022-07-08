@@ -82,7 +82,7 @@ num_beams = st.sidebar.slider(
 )
 
 length_pe_slider_disabled = False
-if model_selected == "GPT2":
+if model_selected == "GPT-2":
     length_pe_slider_disabled = True
 
 st.sidebar.write("\n")
