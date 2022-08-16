@@ -70,7 +70,7 @@ h1 {
 #st.sidebar.image("svu.png", width=150)
 #st.sidebar.write("\n")
 st.sidebar.write("Arabic Text Summarization")
-st.sidebar.write("Made by Mohammad Bani Almarjeh ([Linkedin](https://www.linkedin.com/in/mohammad-bani-almarjeh))")
+st.sidebar.write("Contact: banimarje@gmail.com")
 st.sidebar.write("\n")
 
 model_selected = st.sidebar.selectbox(
